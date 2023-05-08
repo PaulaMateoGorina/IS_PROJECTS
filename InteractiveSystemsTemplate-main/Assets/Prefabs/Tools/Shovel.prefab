@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4169698474938529168}
   - component: {fileID: 4169698474936265555}
   m_Layer: 0
-  m_Name: PP_Shovel_Used_03_Iron
+  m_Name: Shovel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4169698474936265552}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.0035142172, y: -0.3010998, z: -0.9528931, w: 0.036351267}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 15, y: 7.5, z: 15}
+  m_LocalScale: {x: 7.5, y: 3.75, z: 7.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -35, y: -2, z: -175}
 --- !u!33 &4169698474937530192
 MeshFilter:
   m_ObjectHideFlags: 0
