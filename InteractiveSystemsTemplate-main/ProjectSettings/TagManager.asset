@@ -6,6 +6,10 @@ TagManager:
   tags:
   - BlendPlane0
   - BlendPlane1
+  - BucketButton
+  - PickaxeButton
+  - AxeButton
+  - ShovelButton
   layers:
   - Default
   - TransparentFX

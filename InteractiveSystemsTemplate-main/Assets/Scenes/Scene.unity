@@ -2592,6 +2592,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe button
       objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: AxeButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2662,7 +2666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &455891442
 Transform:
   m_ObjectHideFlags: 0
@@ -4011,6 +4015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bucket button
       objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: BucketButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -4149,7 +4157,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &925521409
 Transform:
   m_ObjectHideFlags: 0
@@ -4923,6 +4931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bucket button
       objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: BucketButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -5205,9 +5217,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1559701795}
     m_Modifications:
+    - target: {fileID: -8881609630123760966, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8881609630123760966, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8881609630123760966, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_Size.z
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_Name
       value: Shovel button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: ShovelButton
       objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
@@ -5622,6 +5654,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266383783}
   m_CullTransparentMesh: 1
+--- !u!1 &1286648684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286648685}
+  m_Layer: 0
+  m_Name: ToolParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1286648685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286648684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1498621454}
+  m_Father: {fileID: 1440896351}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1304957655
 GameObject:
   m_ObjectHideFlags: 0
@@ -5903,6 +5966,8 @@ GameObject:
   - component: {fileID: 1440896349}
   - component: {fileID: 1440896348}
   - component: {fileID: 1440896352}
+  - component: {fileID: 1440896353}
+  - component: {fileID: 1440896354}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -5918,10 +5983,10 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440896347}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1440896349
 MeshRenderer:
@@ -5982,7 +6047,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 25, y: 0, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1286648685}
   m_Father: {fileID: 1563017567}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5999,6 +6065,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIndex: 1
+--- !u!114 &1440896353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440896347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5a057f216e4e4340a97d4a233cb6943, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axePrefab: {fileID: 6454499749934941597, guid: 5c266243bdd7a6a4c8d069957f6bff9f, type: 3}
+  bucketPrefab: {fileID: 5882448671471983631, guid: b8cd161c3c5c62a438ab3cad2334450e, type: 3}
+  pickaxePrefab: {fileID: 5676840300738598790, guid: 2ce7f3f60a7219d478bdc624979d8024, type: 3}
+  shovelPrefab: {fileID: 4169698474936265552, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
+  toolParent: {fileID: 1286648685}
+  cooldown: 5
+--- !u!54 &1440896354
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1440896347}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1447726801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6009,6 +6109,10 @@ PrefabInstance:
     - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_Name
       value: Pickaxe button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: PickaxeButton
       objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
@@ -6901,6 +7005,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497522838}
   m_CullTransparentMesh: 1
+--- !u!1 &1498621453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498621454}
+  m_Layer: 0
+  m_Name: Dummy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1498621454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498621453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1286648685}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1511474510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8107,6 +8241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shovel button
       objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: ShovelButton
+      objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8200,22 +8338,6 @@ PrefabInstance:
     - target: {fileID: 4169698474936760176, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
       propertyPath: m_LocalPosition.z
       value: 19.238867
-      objectReference: {fileID: 0}
-    - target: {fileID: 4169698474936760176, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.039849527
-      objectReference: {fileID: 0}
-    - target: {fileID: 4169698474936760176, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.0034633938
-      objectReference: {fileID: 0}
-    - target: {fileID: 4169698474936760176, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.12470825
-      objectReference: {fileID: 0}
-    - target: {fileID: 4169698474936760176, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.99138683
       objectReference: {fileID: 0}
     - target: {fileID: 4169698474936760176, guid: a8d1317027e9eb24b8544ccf6085320d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9173,8 +9295,8 @@ Transform:
   - {fileID: 1191400282}
   - {fileID: 2110946092}
   - {fileID: 770727494}
-  - {fileID: 1139960677}
   - {fileID: 1511474511}
+  - {fileID: 1139960677}
   m_Father: {fileID: 1661244580}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9645,6 +9767,10 @@ PrefabInstance:
     - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_Name
       value: Axe button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: AxeButton
       objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
@@ -10549,6 +10675,10 @@ PrefabInstance:
     - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_Name
       value: Pickaxe button
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243491976922850020, guid: 213070c8cf965684788db60047ea28c6, type: 3}
+      propertyPath: m_TagString
+      value: PickaxeButton
       objectReference: {fileID: 0}
     - target: {fileID: 6811655626288992379, guid: 213070c8cf965684788db60047ea28c6, type: 3}
       propertyPath: m_RootOrder
