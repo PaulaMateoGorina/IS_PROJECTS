@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 6454499749935438269}
   - component: {fileID: 6454499749932013981}
   - component: {fileID: 6454499749933013853}
+  - component: {fileID: 4329585845822444556}
   m_Layer: 0
   m_Name: Axe
-  m_TagString: Untagged
+  m_TagString: Axe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,3 +82,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4329585845822444556
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6454499749934941597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25027782, y: 0.8159176, z: 0.044696845}
+  m_Center: {x: -0.023084097, y: -0.17107052, z: -0.000105533945}

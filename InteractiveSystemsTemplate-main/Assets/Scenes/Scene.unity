@@ -2675,7 +2675,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455891441}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1797515177}
@@ -2738,6 +2738,10 @@ PrefabInstance:
     - target: {fileID: 108507113624723981, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
       propertyPath: m_Name
       value: Stone (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674138943904817987, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: count
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
@@ -3951,7 +3955,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5018,7 +5022,7 @@ MeshCollider:
   m_GameObject: {fileID: 1176945744}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 0
   m_CookingOptions: 30
@@ -5080,7 +5084,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176945744}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51, y: -0.5, z: 50}
+  m_LocalPosition: {x: 51, y: -1.5, z: 50}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7044,7 +7048,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8979663068078297755, guid: 1b12ca880f872df42a8e05f1a7c6395f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8979663068078297755, guid: 1b12ca880f872df42a8e05f1a7c6395f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10560,6 +10564,10 @@ PrefabInstance:
     - target: {fileID: 108507113624723981, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
       propertyPath: m_Name
       value: Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674138943904817987, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: count
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
