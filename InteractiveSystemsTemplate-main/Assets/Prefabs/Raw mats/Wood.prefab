@@ -77,8 +77,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6746e98356bca00409a701017474d98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitsToDestroy: 0
-  toolTag: 
+  hitsToDestroy: 2
+  toolTag: Axe
 --- !u!1 &715464564022654553
 GameObject:
   m_ObjectHideFlags: 0

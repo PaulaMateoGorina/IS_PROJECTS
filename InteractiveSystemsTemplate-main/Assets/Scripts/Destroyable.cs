@@ -19,7 +19,7 @@ public class Destroyable : MonoBehaviour
       
     }
 
-    private void OnCollisionEnter(Collision collision){
+   /* private void OnCollisionEnter(Collision collision){
         Debug.Log("Collision");
         if (collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag)){
             hitsToDestroy--;
@@ -27,7 +27,27 @@ public class Destroyable : MonoBehaviour
             if(hitsToDestroy <= 0){
                 Destroy(gameObject);
                 Debug.Log("Destroyed");
+                
             }
         }//Debug.Log("Collision detected");
+    }*/
+
+    private void OnCollisionEnter(Collision collision){
+    Debug.Log("Collision");
+    if (collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag)){
+        hitsToDestroy--;
+        Debug.Log("Hit");
+        if(hitsToDestroy <= 0){
+          
+            Player playerScript = collision.gameObject.GetComponent<Player>();
+            if (playerScript != null) {
+                // Call SomeFunction in the Player script
+                playerScript.ModelSwitcher();
+            }
+            Destroy(gameObject);
+            Debug.Log("Destroyed");    
+        }
     }
+}
+
 }

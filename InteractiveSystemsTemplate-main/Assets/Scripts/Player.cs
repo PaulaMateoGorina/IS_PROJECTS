@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameObject collectedWoodPrefab;
+    public GameObject collectedWaterPrefab;
+    public GameObject collectedStonePrefab;
+    public GameObject collectedClayPrefab;
     public GameObject axePrefab;
     public GameObject bucketPrefab;
     public GameObject pickaxePrefab;
     public GameObject shovelPrefab;
+    
     public Transform player_transform;
     public float cooldown;
     private bool onCooldown;
@@ -28,6 +33,37 @@ public class Player : MonoBehaviour
         }
         
     }
+
+    public void ModelSwitcher(){
+        switch (this.transform.GetChild(0).gameObject.tag){
+            case "Axe":
+                Destroy(player_transform.GetChild(0).gameObject); 
+                Instantiate(collectedWoodPrefab, player_transform);
+            break;
+
+            case "Pickaxe":
+                Destroy(player_transform.GetChild(0).gameObject); 
+                Instantiate(collectedStonePrefab, player_transform);
+            break;
+
+            case "Shovel":
+                Destroy(player_transform.GetChild(0).gameObject); 
+                Instantiate(collectedClayPrefab, player_transform);
+            break;
+
+            case "Bucket":
+                Destroy(player_transform.GetChild(0).gameObject); 
+                Instantiate(collectedWaterPrefab, player_transform);
+            break;
+
+        }
+            
+    }
+
+
+
+
+
 
     private void OnTriggerEnter(Collider other)
     {
