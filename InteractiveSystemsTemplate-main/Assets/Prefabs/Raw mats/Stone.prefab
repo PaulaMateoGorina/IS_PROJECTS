@@ -48,8 +48,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 25, y: 20, z: 20}
-  m_Center: {x: -15, y: 0, z: 13}
+  m_Size: {x: 25, y: 15, z: 20}
+  m_Center: {x: -15, y: 3, z: 13}
 --- !u!114 &2674138943904817987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62,7 +62,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6746e98356bca00409a701017474d98b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 2
+  hitsToDestroy: 2
+  toolTag: Pickaxe
 --- !u!54 &7715984255540292418
 Rigidbody:
   m_ObjectHideFlags: 0

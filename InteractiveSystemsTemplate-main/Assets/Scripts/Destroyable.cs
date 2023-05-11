@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stone : MonoBehaviour
+public class Destroyable : MonoBehaviour
 {
-    public int count;
+    public int hitsToDestroy;
+    public string toolTag;
 
     // Start is called before the first frame update
     void Start()
@@ -19,12 +20,13 @@ public class Stone : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision){
-        if(collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).GetChild(0).gameObject.CompareTag("Pickaxe")){
-            count--;
-            Debug.Log("Rock Hit");
-            if(count <= 0){
+        Debug.Log("Collision");
+        if (collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag)){
+            hitsToDestroy--;
+            Debug.Log("Hit");
+            if(hitsToDestroy <= 0){
                 Destroy(gameObject);
-                Debug.Log("Rock destroyed");
+                Debug.Log("Destroyed");
             }
         }//Debug.Log("Collision detected");
     }

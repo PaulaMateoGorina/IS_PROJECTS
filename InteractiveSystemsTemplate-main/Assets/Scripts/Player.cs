@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public GameObject bucketPrefab;
     public GameObject pickaxePrefab;
     public GameObject shovelPrefab;
-    public Transform toolParent;
+    public Transform player_transform;
     public float cooldown;
     private bool onCooldown;
     // Start is called before the first frame update
@@ -36,24 +36,23 @@ public class Player : MonoBehaviour
             switch (other.tag) 
             {
                 case "AxeButton":
-                    Destroy(toolParent.GetChild(0).gameObject); 
-                    Instantiate(axePrefab, toolParent);
-    
+                    Destroy(player_transform.GetChild(0).gameObject); 
+                    Instantiate(axePrefab, player_transform);
                 break;
 
                 case "PickaxeButton":
-                    Destroy(toolParent.GetChild(0).gameObject); 
-                    Instantiate(pickaxePrefab, toolParent);
+                    Destroy(player_transform.GetChild(0).gameObject); 
+                    Instantiate(pickaxePrefab, player_transform);
                 break;
 
                 case "ShovelButton":
-                    Destroy(toolParent.GetChild(0).gameObject); 
-                    Instantiate(shovelPrefab, toolParent);
+                    Destroy(player_transform.GetChild(0).gameObject); 
+                    Instantiate(shovelPrefab, player_transform);
                 break;
 
                 case "BucketButton":
-                    Destroy(toolParent.GetChild(0).gameObject); 
-                    Instantiate(bucketPrefab, toolParent);
+                    Destroy(player_transform.GetChild(0).gameObject); 
+                    Instantiate(bucketPrefab, player_transform);
                 break;
                 default:
                     onCooldown = false;
