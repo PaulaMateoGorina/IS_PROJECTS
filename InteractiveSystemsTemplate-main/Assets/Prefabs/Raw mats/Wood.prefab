@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitsToDestroy: 2
   toolTag: Axe
+  collectedMaterialPrefab: {fileID: 2636115656386671080, guid: 70512fb9ab9201d4ab7cbddc5d30941d, type: 3}
 --- !u!1 &715464564022654553
 GameObject:
   m_ObjectHideFlags: 0

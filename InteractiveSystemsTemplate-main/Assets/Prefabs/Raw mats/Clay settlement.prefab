@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitsToDestroy: 2
   toolTag: Shovel
+  collectedMaterialPrefab: {fileID: 6884666245200338381, guid: 3642e523234f1e94e8ac58a86e9a7255, type: 3}
 --- !u!1001 &274765237917577257
 PrefabInstance:
   m_ObjectHideFlags: 0

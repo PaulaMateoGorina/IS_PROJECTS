@@ -64,6 +64,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitsToDestroy: 2
   toolTag: Pickaxe
+  collectedMaterialPrefab: {fileID: 1290125285081394, guid: 05e91945543f2f94d8dd270963a611f5, type: 3}
 --- !u!54 &7715984255540292418
 Rigidbody:
   m_ObjectHideFlags: 0
