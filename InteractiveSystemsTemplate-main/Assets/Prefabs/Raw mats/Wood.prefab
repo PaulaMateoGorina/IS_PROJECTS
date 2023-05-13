@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7721458759127758381}
   m_Layer: 0
   m_Name: Wood
-  m_TagString: Untagged
+  m_TagString: Wood
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64,7 +64,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 8, y: 11, z: 7}
-  m_Center: {x: 1.5, y: 6.86, z: 2.25}
+  m_Center: {x: 1.5, y: 7, z: 2.25}
 --- !u!114 &7721458759127758381
 MonoBehaviour:
   m_ObjectHideFlags: 0

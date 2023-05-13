@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -8326036706219729339}
   m_Layer: 0
   m_Name: Clay settlement
-  m_TagString: Untagged
+  m_TagString: Clay
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65,7 +65,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 23, y: 1, z: 25}
-  m_Center: {x: -8, y: 0, z: 10}
+  m_Center: {x: -8, y: 0.68, z: 10}
 --- !u!114 &-8326036706219729339
 MonoBehaviour:
   m_ObjectHideFlags: 0

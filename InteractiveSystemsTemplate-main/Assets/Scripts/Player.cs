@@ -8,8 +8,8 @@ public class Player : MonoBehaviour
     public GameObject bucketPrefab;
     public GameObject pickaxePrefab;
     public GameObject shovelPrefab;
+    public GameObject dummyPrefab;
     
-    public Transform player_transform;
     public float cooldown;
     private bool onCooldown;
     private bool hand_free;
@@ -35,8 +35,8 @@ public class Player : MonoBehaviour
 
     public void changeHeldObject(GameObject prefab, bool is_tool){
         hand_free = is_tool;
-        Destroy(player_transform.GetChild(0).gameObject); 
-        Instantiate(prefab, player_transform);
+        Destroy(gameObject.transform.GetChild(0).gameObject); 
+        Instantiate(prefab, gameObject.transform);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -67,5 +67,15 @@ public class Player : MonoBehaviour
             
         }
     }
- 
+
+    public bool holdingMaterial()
+    {
+        return !hand_free;
+    }
+
+    public void freeHand()
+    {
+        changeHeldObject(dummyPrefab, true);
+    }
 }
+

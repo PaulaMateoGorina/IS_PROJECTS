@@ -10,6 +10,14 @@ TagManager:
   - PickaxeButton
   - AxeButton
   - ShovelButton
+  - Stone
+  - Shovel
+  - Axe
+  - Bucket
+  - Pickaxe
+  - Wood
+  - Clay
+  - Water
   layers:
   - Default
   - TransparentFX

@@ -1,0 +1,81 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Submission: MonoBehaviour
+{
+
+    public static Submission Instance;
+
+    public GameObject result;
+
+    public int woodNeeded;
+    public int stoneNeeded;
+    public int clayNeeded;
+    public int waterNeeded;
+
+    private int materialsNeeded;
+
+    // Start is called before the first frame update
+    void Awake()
+    {
+        Instance = this;
+        materialsNeeded = woodNeeded + stoneNeeded + clayNeeded + waterNeeded;
+    }
+
+    void Start()
+    {
+        OrderManager.Instance.UpdateWoodText(woodNeeded);
+        OrderManager.Instance.UpdateStoneText(stoneNeeded);
+        OrderManager.Instance.UpdateClayText(clayNeeded);
+        OrderManager.Instance.UpdateWaterText(waterNeeded);
+    }
+
+    public void updateMaterialsNeeded(string materialName)
+    {
+        switch (materialName)
+        {
+            case "Wood":
+                woodNeeded--;
+                break;
+
+            case "Stone":
+                stoneNeeded--;
+                break;
+
+            case "Clay":
+                clayNeeded--;
+                break;
+            case "Water":
+                waterNeeded--;
+                break;
+        }
+        materialsNeeded--;
+
+        if(materialsNeeded == 0)
+        {
+            Instantiate(result, transform);
+        }
+    }
+
+    public bool isMaterialNeeded(string materialName)
+    {
+        switch (materialName)
+        {
+            case "Wood":
+                return woodNeeded > 0;
+                break;
+            case "Stone":
+                return stoneNeeded > 0;
+                break;
+
+            case "Clay":
+                return clayNeeded > 0;
+                break;
+            case "Water":
+                return waterNeeded > 0;
+                break;
+        }
+        return false;   
+    }
+}
