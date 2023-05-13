@@ -37,17 +37,22 @@ public class Submission: MonoBehaviour
         {
             case "Wood":
                 woodNeeded--;
+                OrderManager.Instance.UpdateWoodText(woodNeeded);
                 break;
 
             case "Stone":
+                Debug.Log("Entered submission switch");
                 stoneNeeded--;
+                OrderManager.Instance.UpdateStoneText(stoneNeeded);
                 break;
 
             case "Clay":
                 clayNeeded--;
+                OrderManager.Instance.UpdateClayText(clayNeeded);
                 break;
             case "Water":
                 waterNeeded--;
+                OrderManager.Instance.UpdateWaterText(waterNeeded);
                 break;
         }
         materialsNeeded--;

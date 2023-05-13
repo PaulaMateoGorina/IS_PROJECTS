@@ -8,12 +8,11 @@ public class OrderManager : MonoBehaviour
 {
     public static OrderManager Instance;
 
-    public TextMeshProUGUI orderText;
-    public TextMeshProUGUI woodText;
-    public TextMeshProUGUI stoneText;
-    public TextMeshProUGUI clayText;
-    public TextMeshProUGUI waterText;
-    public TextMeshProUGUI timeText;
+    public TMP_Text woodText;
+    public TMP_Text stoneText;
+    public TMP_Text clayText;
+    public TMP_Text waterText;
+    public TMP_Text timeText;
 
     void Awake()
     {
@@ -23,24 +22,24 @@ public class OrderManager : MonoBehaviour
     // Update is called once per frame
     public void UpdateWoodText(int wood)
     {
-        woodText.text = "Wood x" + wood.ToString();
+        woodText.text = "Wood x" + wood;
     }
 
     // Update is called once per frame
     public void UpdateStoneText(int stone)
     {
-        stoneText.text = "Stone x" + stone.ToString();
+        stoneText.text = "Stone x" + stone;
     }
 
     // Update is called once per frame
     public void UpdateClayText(int clay)
     {
-        clayText.text = "Clay x" + clay.ToString();
+        clayText.text = "Clay x" + clay;
     }
 
     // Update is called once per frame
     public void UpdateWaterText(int water)
     {
-        waterText.text = "Water x" + water.ToString();
+        waterText.text = "Water x" + water;
     }
 }
