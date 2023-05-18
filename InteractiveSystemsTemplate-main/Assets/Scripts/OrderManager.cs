@@ -42,4 +42,8 @@ public class OrderManager : MonoBehaviour
     {
         waterText.text = "Water x" + water;
     }
+
+    public void UpdateTimeText(int time){
+        timeText.text = "Quedan: " + time + "s";
+    }
 }

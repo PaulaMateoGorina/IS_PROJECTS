@@ -44,7 +44,6 @@ public class Destroyable : MonoBehaviour
                     Player playerScript = collision.gameObject.GetComponent<Player>();
                     if (playerScript != null)
                     {
-                        // Call SomeFunction in the Player script
                         playerScript.changeHeldObject(collectedMaterialPrefab, false);
                     }
                     Destroy(gameObject);

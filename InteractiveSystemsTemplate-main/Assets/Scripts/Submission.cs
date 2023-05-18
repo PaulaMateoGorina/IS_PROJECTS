@@ -13,6 +13,7 @@ public class Submission: MonoBehaviour
     public int stoneNeeded;
     public int clayNeeded;
     public int waterNeeded;
+    public float remainingTime;
 
     private int materialsNeeded;
 
@@ -29,6 +30,15 @@ public class Submission: MonoBehaviour
         OrderManager.Instance.UpdateStoneText(stoneNeeded);
         OrderManager.Instance.UpdateClayText(clayNeeded);
         OrderManager.Instance.UpdateWaterText(waterNeeded);
+        OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));  
+    }
+
+    void Update(){
+        remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
+        if(remainingTime == 0.0f){
+            Debug.Log("Gameover BB");
+        }
+        OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
     }
 
     public void updateMaterialsNeeded(string materialName)
@@ -62,6 +72,7 @@ public class Submission: MonoBehaviour
             Instantiate(result, transform);
         }
     }
+
 
     public bool isMaterialNeeded(string materialName)
     {
