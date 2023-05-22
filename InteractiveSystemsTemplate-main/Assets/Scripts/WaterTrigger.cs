@@ -5,7 +5,7 @@ using UnityEngine;
 public class WaterTrigger : MonoBehaviour
 {   
     public string toolTag;
-    public GameObject collectedMaterialPrefab;
+    public GameObject waterBucketPrefab;
 
     private float cooldown;
     private bool onCooldown;
@@ -21,16 +21,16 @@ public class WaterTrigger : MonoBehaviour
         
     }
 
-     private void OnTriggerEnter(Collider collision){
-        Debug.Log("Collision");
-        if (Submission.Instance.isMaterialNeeded(gameObject.tag))
+     private void OnTriggerEnter(Collider other){
+        Debug.Log("entered water");
+        if (SubmissionManager.Instance.isMaterialNeeded(gameObject.tag))
         {
-            if (!onCooldown && collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
+            if (!onCooldown && other.gameObject.CompareTag("Player") && other.transform.GetChild(0).gameObject.CompareTag(toolTag))
             {
-                Player playerScript = collision.gameObject.GetComponent<Player>();
+                Player playerScript = other.gameObject.GetComponent<Player>();
                 if (playerScript != null)
                 {
-                    playerScript.changeHeldObject(collectedMaterialPrefab, false);
+                    playerScript.changeHeldObject(waterBucketPrefab, false);
                 }
             }
         }
@@ -38,5 +38,5 @@ public class WaterTrigger : MonoBehaviour
         {
             //TODO: display
         }
-    }
+     }
 }

@@ -32,7 +32,7 @@ public class Destroyable : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision");
-        if (Submission.Instance.isMaterialNeeded(gameObject.tag))
+        if (SubmissionManager.Instance.isMaterialNeeded(gameObject.tag))
         {
             if (!onCooldown && collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
             {
@@ -43,9 +43,7 @@ public class Destroyable : MonoBehaviour
 
                     Player playerScript = collision.gameObject.GetComponent<Player>();
                     if (playerScript != null)
-                    {
                         playerScript.changeHeldObject(collectedMaterialPrefab, false);
-                    }
                     Destroy(gameObject);
                     Debug.Log("Destroyed");
                 }

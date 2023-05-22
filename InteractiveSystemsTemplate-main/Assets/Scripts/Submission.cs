@@ -26,11 +26,7 @@ public class Submission: MonoBehaviour
 
     void Start()
     {
-        OrderManager.Instance.UpdateWoodText(woodNeeded);
-        OrderManager.Instance.UpdateStoneText(stoneNeeded);
-        OrderManager.Instance.UpdateClayText(clayNeeded);
-        OrderManager.Instance.UpdateWaterText(waterNeeded);
-        OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));  
+        updateAll();
     }
 
     void Update(){
@@ -39,6 +35,15 @@ public class Submission: MonoBehaviour
             Debug.Log("Gameover BB");
         }
         OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
+    }
+
+    public void updateAll()
+    {
+        OrderManager.Instance.UpdateWoodText(woodNeeded);
+        OrderManager.Instance.UpdateStoneText(stoneNeeded);
+        OrderManager.Instance.UpdateClayText(clayNeeded);
+        OrderManager.Instance.UpdateWaterText(waterNeeded);
+        OrderManager.Instance.UpdateTimeText((int)Mathf.Ceil(remainingTime));
     }
 
     public void updateMaterialsNeeded(string materialName)
@@ -69,7 +74,9 @@ public class Submission: MonoBehaviour
 
         if(materialsNeeded == 0)
         {
+            Debug.Log("finished!");
             Instantiate(result, transform);
+            SubmissionManager.Instance.submissionOver(false);
         }
     }
 

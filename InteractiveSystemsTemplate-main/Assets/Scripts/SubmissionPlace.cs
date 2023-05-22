@@ -14,7 +14,7 @@ public class SubmissionPlace : MonoBehaviour
             Player playerScript = other.gameObject.GetComponent<Player>();
             if (playerScript != null && playerScript.holdingMaterial())
             {
-                Submission.Instance.updateMaterialsNeeded(other.transform.GetChild(0).gameObject.tag);
+                SubmissionManager.Instance.updateMaterialsNeeded(other.transform.GetChild(0).gameObject.tag);
                 playerScript.freeHand();
                 Debug.Log("Submitted");
             }

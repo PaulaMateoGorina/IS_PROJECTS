@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public GameObject axePrefab;
-    public GameObject bucketPrefab;
-    public GameObject pickaxePrefab;
-    public GameObject shovelPrefab;
     public GameObject handPrefab;
     
     public float cooldown;
@@ -39,32 +35,12 @@ public class Player : MonoBehaviour
         Instantiate(prefab, gameObject.transform);
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void changeTool(GameObject toolPrefab)
     {
-       if(!onCooldown && hand_free){
+        if (!onCooldown && hand_free)
+        {
             onCooldown = true;
-            switch (other.tag) 
-            {
-                case "AxeButton":
-                    changeHeldObject(axePrefab, true);
-                    break;
-
-                case "PickaxeButton":
-                    changeHeldObject(pickaxePrefab, true);
-                    break;
-
-                case "ShovelButton":
-                    changeHeldObject(shovelPrefab, true);
-                    break;
-
-                case "BucketButton":
-                    changeHeldObject(bucketPrefab, true);
-                    break;
-                default:
-                    onCooldown = false;
-                    break;
-            }
-            
+            changeHeldObject(toolPrefab, true);
         }
     }
 
