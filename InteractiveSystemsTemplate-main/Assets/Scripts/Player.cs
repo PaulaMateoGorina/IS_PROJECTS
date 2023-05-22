@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public GameObject bucketPrefab;
     public GameObject pickaxePrefab;
     public GameObject shovelPrefab;
-    public GameObject dummyPrefab;
+    public GameObject handPrefab;
     
     public float cooldown;
     private bool onCooldown;
@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
 
     public void freeHand()
     {
-        changeHeldObject(dummyPrefab, true);
+        changeHeldObject(handPrefab, true);
     }
 }
 
