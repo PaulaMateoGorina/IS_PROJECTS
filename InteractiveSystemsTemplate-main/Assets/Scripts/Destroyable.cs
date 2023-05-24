@@ -40,7 +40,6 @@ public class Destroyable : MonoBehaviour
                 Debug.Log("Hit");
                 if (hitsToDestroy <= 0)
                 {
-
                     Player playerScript = collision.gameObject.GetComponent<Player>();
                     if (playerScript != null)
                         playerScript.changeHeldObject(collectedMaterialPrefab, false);

@@ -14,6 +14,8 @@ public class Submission: MonoBehaviour
     public int clayNeeded;
     public int waterNeeded;
     public float remainingTime;
+    public GameObject materialStage;
+
 
     private int materialsNeeded;
 
@@ -32,7 +34,6 @@ public class Submission: MonoBehaviour
     void Update(){
         remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
         if(remainingTime == 0.0f){
-            Debug.Log("Gameover BB");
         }
         OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
     }
