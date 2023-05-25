@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SubmissionManager : MonoBehaviour
 {
@@ -37,8 +38,8 @@ public class SubmissionManager : MonoBehaviour
 
     void Start()
     {
-        
         Instantiate(submissions[curSubmission].materialStage, materials);
+        submissions[curSubmission].updateAll();
     }
 
     void Update(){
@@ -55,7 +56,8 @@ public class SubmissionManager : MonoBehaviour
         //TODO: remove this unnecessary condition when the success scene is made
         else if(curSubmission < numSubmissions)
         // Update the text indicating the time remaining for the submission otherwise
-            OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(submissions[curSubmission].remainingTime));
+            submissions[curSubmission].updateTime();
+         //  OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(submissions[curSubmission].remainingTime));
 
    
 
@@ -86,6 +88,8 @@ public class SubmissionManager : MonoBehaviour
         {
             submissions[curSubmission].updateAll();
             Instantiate(submissions[curSubmission].materialStage, materials);
+        }else{
+            SceneManager.LoadScene("SuccessScene");
         }
     }
 
@@ -104,8 +108,6 @@ public class SubmissionManager : MonoBehaviour
             successMessage.SetActive(true);
 
             Invoke("newSubmission", 5);
-
-            //TODO: else - GAME FINISHED!!
         }
     }
 }

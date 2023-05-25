@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Submission: MonoBehaviour
 {
@@ -28,14 +29,14 @@ public class Submission: MonoBehaviour
 
     void Start()
     {
-        updateAll();
+      // updateAll();
     }
 
     void Update(){
-        remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
-        if(remainingTime == 0.0f){
-        }
-        OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
+        // remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
+        // if(remainingTime == 0.0f){
+        // }
+        // OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
     }
 
     public void updateAll()
@@ -45,6 +46,14 @@ public class Submission: MonoBehaviour
         OrderManager.Instance.UpdateClayText(clayNeeded);
         OrderManager.Instance.UpdateWaterText(waterNeeded);
         OrderManager.Instance.UpdateTimeText((int)Mathf.Ceil(remainingTime));
+    }
+
+    public void updateTime(){
+        remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
+        if(remainingTime == 0.0f){
+            SceneManager.LoadScene("GameOver");
+        }
+        OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
     }
 
     public void updateMaterialsNeeded(string materialName)
