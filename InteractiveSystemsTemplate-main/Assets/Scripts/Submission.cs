@@ -29,14 +29,11 @@ public class Submission: MonoBehaviour
 
     void Start()
     {
-      // updateAll();
+     
     }
 
     void Update(){
-        // remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
-        // if(remainingTime == 0.0f){
-        // }
-        // OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
+    
     }
 
     public void updateAll()
@@ -51,7 +48,7 @@ public class Submission: MonoBehaviour
     public void updateTime(){
         remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
         if(remainingTime == 0.0f){
-            SceneManager.LoadScene("GameOver");
+            SubmissionManager.Instance.submissionOver(true);
         }
         OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
     }

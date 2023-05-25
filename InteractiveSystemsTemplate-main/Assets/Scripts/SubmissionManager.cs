@@ -74,21 +74,29 @@ public class SubmissionManager : MonoBehaviour
         return submissions[curSubmission].isMaterialNeeded(materialName);
     }
 
+    
     private void newSubmission()
     {
-        // Destroy the previous submission result
-        Destroy(submissions[curSubmission].transform.GetChild(0).gameObject); 
-        
-        // Make the success message invisible again
-        successMessage.SetActive(false);
+        // Destroy the current stage materials and show the success message
+        Destroy(materials.GetChild(0).gameObject);
 
-        // Change the submission, update the order texts and instantiate the materials associated with the submission
+        // Destroy the previous submission result
+        Destroy(submissions[curSubmission].transform.GetChild(0).gameObject);
+
+        // Update the number of submissions
         curSubmission++;
+
         if (curSubmission < numSubmissions)
         {
-            submissions[curSubmission].updateAll();
-            Instantiate(submissions[curSubmission].materialStage, materials);
-        }else{
+            inSuccess = true;
+            successMessageTime = 5.0f;
+            successMessage.SetActive(true);
+
+            // Start the delay coroutine
+            StartCoroutine(DelayedExecution(5.0f));
+        }
+        else
+        {
             SceneManager.LoadScene("SuccessScene");
         }
     }
@@ -97,17 +105,24 @@ public class SubmissionManager : MonoBehaviour
     {
         if (expired)
         {
-            //TODO: GAMEOVER
+            SceneManager.LoadScene("GameOver");
         }
         else
         {
-            // Destroy the current stage materials and show the success message
-            Destroy(materials.GetChild(0).gameObject);
-            inSuccess = true;
-            successMessageTime = 5.0f;
-            successMessage.SetActive(true);
-
-            Invoke("newSubmission", 5);
+            newSubmission();
         }
+    }
+
+    private IEnumerator DelayedExecution(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        // Continue with the execution after the delay
+        // Make the success message invisible again
+        successMessage.SetActive(false);
+
+        // Instantiate the new submission and the materials
+        submissions[curSubmission].updateAll();
+        Instantiate(submissions[curSubmission].materialStage, materials);
     }
 }
