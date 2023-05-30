@@ -2349,6 +2349,7 @@ Transform:
   m_Children:
   - {fileID: 1173374671}
   - {fileID: 1647564932}
+  - {fileID: 903178522}
   m_Father: {fileID: 455891442}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3792,6 +3793,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1935006918053440450, guid: 5ef19e19e173c7f4598ba79485dae987, type: 3}
   m_PrefabInstance: {fileID: 900292450}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &903178521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903178522}
+  - component: {fileID: 903178523}
+  m_Layer: 0
+  m_Name: Collaborative
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &903178522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903178521}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486753430}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903178523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903178521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e57c4d1a3c40f488bbdc27e0033276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  result: {fileID: 1640908652775104, guid: cd87e5026d1695148aabe96121c526ef, type: 3}
+  woodNeeded: 1
+  stoneNeeded: 0
+  clayNeeded: 0
+  waterNeeded: 0
+  remainingTime: 30
+  materialStage: {fileID: 412433970581518679, guid: 6379e964959f07d4fb0f545e79e2f6d2, type: 3}
 --- !u!1 &947617070 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1252687729517630, guid: a8cba3361c8f7724e8899289f1efa8cc, type: 3}
@@ -4947,6 +4998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 0}
+  num_player: 4
   cooldown: 5
 --- !u!1 &1266383783
 GameObject:
@@ -5703,6 +5755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 557806dcc4afedd408a2dbbce9154333, type: 3}
+  num_player: 1
   cooldown: 5
 --- !u!54 &1440896354
 Rigidbody:
@@ -6266,6 +6319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 5ef19e19e173c7f4598ba79485dae987, type: 3}
+  num_player: 2
   cooldown: 5
 --- !u!1001 &1477000762
 PrefabInstance:
@@ -8116,6 +8170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 0}
+  num_player: 3
   cooldown: 5
 --- !u!1 &1866559963
 GameObject:
