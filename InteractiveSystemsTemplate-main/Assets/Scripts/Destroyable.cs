@@ -15,6 +15,7 @@ public class Destroyable : MonoBehaviour
     void Start()
     {
         cooldown = 0.5f;
+        onCooldown = false;
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Destroyable : MonoBehaviour
     {
       if(onCooldown){
         cooldown -= Time.deltaTime;
-        if(cooldown<=0){
+        if(cooldown <= 0.0f){
             onCooldown = false;
             cooldown = 0.5f;
         }
@@ -38,6 +39,7 @@ public class Destroyable : MonoBehaviour
             {
                 hitsToDestroy--;
                 Debug.Log("Hit");
+                onCooldown = true;
                 if (hitsToDestroy <= 0)
                 {
                     Player playerScript = collision.gameObject.GetComponent<Player>();

@@ -18,6 +18,7 @@ TagManager:
   - Wood
   - Clay
   - Water
+  - Trashcan
   layers:
   - Default
   - TransparentFX
