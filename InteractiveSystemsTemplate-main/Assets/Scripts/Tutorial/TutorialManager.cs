@@ -39,6 +39,10 @@ public class TutorialManager : MonoBehaviour
                 TutorialStages.Instance.startStage1();
                 break;
             case 2:
+                TutorialStages.Instance.endStage1();
+                TutorialStages.Instance.startStage2();
+                break;
+            case 3:
                 SceneManager.LoadScene("Scene");
                 break;
         }

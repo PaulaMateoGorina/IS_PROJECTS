@@ -49,28 +49,41 @@ public class DestroyableCollab : MonoBehaviour
         {   
             Debug.Log("hit2");
             Player playerScript = collision.gameObject.GetComponent<Player>();
-            int num_player = playerScript.num_player;
+            int numPlayer = playerScript.numPlayer;
 
+            // If players have not started hitting, or the rock has reset
             if(!arePlayersHitting)
             {
                 arePlayersHitting = true;
-                firstPlayer = (num_player % 2) == 0;
+
+                // Take the first player -> bools are easy to switch from one value to another
+                firstPlayer = (numPlayer % 2) == 0;
                 nextPlayer = !firstPlayer;
+
+                // Maximum time a player can take to hit the rock after the other one has done it
                 timeBetweenTurns = 20;
+
+                // Cooldown so we don't collision forever
                 cooldown = 1.0f;
             }
-            else if ( (num_player % 2 == 0) == nextPlayer && cooldown <= 0)
+            // If the player that is hitting it matches the next in line, and there is no cooldown
+            else if ( (numPlayer % 2 == 0) == nextPlayer && cooldown <= 0)
             {
+                // If the player other than the one who started hit it, it means both players have already hit the rock, so we add one hit
                 if(firstPlayer != nextPlayer)
                 {
                     curHits ++;
                 }
+                // If the hits are the needed ones to destroy it
                 if(curHits == hitsToDestroy)
                 {
                     Destroy(gameObject);
                     Debug.Log("Destroyed");
+                    // Advance to the next phase of the tutorial
                     TutorialManager.Instance.next();
                 }
+
+                // Change the next player accordingly
                 nextPlayer = !nextPlayer;
         
                 timeBetweenTurns = 20;
@@ -96,10 +109,10 @@ public class DestroyableCollab : MonoBehaviour
             
     //         //First of all we need to check the player that is colliding
     //         Player playerScript = collision.gameObject.GetComponent<Player>();
-    //         int num_player = playerScript.num_player;
+    //         int numPlayer = playerScript.numPlayer;
 
     //         //if the one colliding is player 1, we need to check wether it is its turn and if the time between the last time player2 hit the rock is less than the turnCooldown.
-    //         if(num_player==1 && isplayerTurn1 && Time.time - lastTurnTime > turnCooldown  )
+    //         if(numPlayer==1 && isplayerTurn1 && Time.time - lastTurnTime > turnCooldown  )
     //         {
     //             player1HitsRemaining--; 
     //             lastTurnTime = Time.time; 
@@ -125,7 +138,7 @@ public class DestroyableCollab : MonoBehaviour
 
     //         }
     //         //We do the same with player 2
-    //         if(num_player==2 && isplayerTurn2 && Time.time - lastTurnTime > turnCooldown  )
+    //         if(numPlayer==2 && isplayerTurn2 && Time.time - lastTurnTime > turnCooldown  )
     //         {
     //             player2HitsRemaining--; 
     //             lastTurnTime = Time.time; 

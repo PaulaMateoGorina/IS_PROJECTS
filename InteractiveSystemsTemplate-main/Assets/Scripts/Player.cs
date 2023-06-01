@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameObject handPrefab;
-    public int num_player;
+    public int numPlayer;
     
     public float cooldown;
     private bool isHoldingMaterial;

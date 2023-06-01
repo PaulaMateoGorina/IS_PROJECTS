@@ -342,7 +342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6004135021258547959, guid: 53fc30b99553c9c4bad90fde681d3a64, type: 3}
       propertyPath: m_text
-      value: "No necesitas \nWOOD"
+      value: "No necesitas \nm\xE1s WOOD"
       objectReference: {fileID: 0}
     - target: {fileID: 6946573168077171048, guid: 53fc30b99553c9c4bad90fde681d3a64, type: 3}
       propertyPath: m_RootOrder

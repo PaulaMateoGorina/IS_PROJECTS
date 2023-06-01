@@ -364,9 +364,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6004135021258547959, guid: 53fc30b99553c9c4bad90fde681d3a64, type: 3}
       propertyPath: m_text
-      value: 'No necesitas
-
-        CLAY'
+      value: "No necesitas m\xE1s CLAY"
       objectReference: {fileID: 0}
     - target: {fileID: 6946573168077171048, guid: 53fc30b99553c9c4bad90fde681d3a64, type: 3}
       propertyPath: m_RootOrder

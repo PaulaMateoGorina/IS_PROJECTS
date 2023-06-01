@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class Submission: MonoBehaviour
 {
 
-    public static Submission Instance;
-
     public GameObject res;
 
     public int woodNeeded;
@@ -19,22 +17,11 @@ public class Submission: MonoBehaviour
 
     public string buildingName;
 
-    private int materialsNeeded;
-
-    // Start is called before the first frame update
-    void Awake()
-    {
-        Instance = this;
-        materialsNeeded = woodNeeded + stoneNeeded + clayNeeded + waterNeeded;
-    }
+    public int materialsNeeded;
 
     void Start()
     {
-     
-    }
-
-    void Update(){
-    
+        materialsNeeded = woodNeeded + stoneNeeded + clayNeeded + waterNeeded;
     }
 
     public void updateAll()
@@ -46,7 +33,7 @@ public class Submission: MonoBehaviour
         OrderManager.Instance.UpdateTimeText((int)Mathf.Ceil(remainingTime));
     }
 
-    public void updateTime(){
+    public virtual void updateTime(){
         remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
         if(remainingTime == 0.0f){
             SubmissionManager.Instance.submissionOver(true);
@@ -80,17 +67,22 @@ public class Submission: MonoBehaviour
         }
         materialsNeeded--;
 
-        if(materialsNeeded == 0)
+        checkFinished();
+    }
+
+    public virtual void checkFinished()
+    {
+        if (materialsNeeded == 0)
         {
             Debug.Log("finished!");
             Instantiate(res, transform);
             SubmissionManager.Instance.submissionOver(false);
-        }else
+        }
+        else
         {
             SoundManager.Instance.PlayCorrect();
         }
     }
-
 
     public bool isMaterialNeeded(string materialName)
     {

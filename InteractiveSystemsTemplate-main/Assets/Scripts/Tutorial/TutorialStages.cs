@@ -9,6 +9,8 @@ public class TutorialStages : MonoBehaviour
 
     public GameObject stage1;
     public GameObject stage2;
+    public GameObject orderPlace;
+    public GameObject helpSign;
 
     private Slides slides1Script;
     private int curStep;
@@ -23,10 +25,32 @@ public class TutorialStages : MonoBehaviour
     {
         stage1.SetActive(false);
         stage2.SetActive(false);
+        orderPlace.SetActive(false);
+        helpSign.SetActive(false);
     }
 
     public void startStage1()
     {
         stage1.SetActive(true);
-    }   
+        orderPlace.SetActive(false);
+    }
+
+    public void endStage1()
+    {
+        stage1.SetActive(false);
+    }
+
+    public void startStage2()
+    {
+        stage2.SetActive(true);
+        orderPlace.SetActive(true);
+        helpSign.SetActive(true);
+    }
+
+    public void endStage2()
+    {
+        stage2.SetActive(false);
+        orderPlace.SetActive(false);
+        helpSign.SetActive(false);
+    }
 }

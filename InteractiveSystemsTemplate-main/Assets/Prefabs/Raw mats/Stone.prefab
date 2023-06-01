@@ -95,6 +95,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 1e7eafb9ff886dc46a499e3b75250feb, type: 2}
     - target: {fileID: 6004135021258547959, guid: 53fc30b99553c9c4bad90fde681d3a64, type: 3}
+      propertyPath: m_text
+      value: "No necesitas \nm\xE1s STONE"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6004135021258547959, guid: 53fc30b99553c9c4bad90fde681d3a64, type: 3}
       propertyPath: m_fontSize
       value: 15
       objectReference: {fileID: 0}
