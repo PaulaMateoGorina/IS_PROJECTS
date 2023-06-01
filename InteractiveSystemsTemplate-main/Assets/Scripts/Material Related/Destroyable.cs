@@ -11,12 +11,15 @@ public class Destroyable : MonoBehaviour
     private float cooldown;
     private bool onCooldown;
 
+    public GameObject errorText;
 
     // Start is called before the first frame update
     void Start()
     {
         cooldown = 0.5f;
         onCooldown = false;
+        errorText.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -49,7 +52,7 @@ public class Destroyable : MonoBehaviour
                     {
         
                         if (playerScript != null)
-                            playerScript.changeHeldObject(collectedMaterialPrefab, false);
+                            playerScript.changeHeldObject(collectedMaterialPrefab, false, true);
                         Destroy(gameObject);
                         Debug.Log("Destroyed");
                         SoundManager.Instance.PlayGetMaterial();
@@ -63,6 +66,8 @@ public class Destroyable : MonoBehaviour
             else if(playerScript.holdingTool())
             {   
                 Debug.Log("Incorrect Material!!");
+                errorText.SetActive(true);
+                StartCoroutine(hideError(5.0f));
                 SoundManager.Instance.PlayIncorrect();
             }
 
@@ -86,5 +91,11 @@ public class Destroyable : MonoBehaviour
                 SoundManager.Instance.PlayDigClay();
             break;
         }
+    }
+
+    private IEnumerator hideError(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        errorText.SetActive(false);        
     }
 }

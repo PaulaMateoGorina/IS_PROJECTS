@@ -10,7 +10,6 @@ public class DestroyableCollab : MonoBehaviour
     public float timeBetweenTurns;
     public int curHits;
 
-    private float turnCoolDown;
     private float lastTurnTime;
     private bool arePlayersHitting;
     private bool firstPlayer;
@@ -23,7 +22,6 @@ public class DestroyableCollab : MonoBehaviour
     {
         arePlayersHitting = false;
         curHits = 0;
-        turnCoolDown = 0.5f;
         lastTurnTime = 0;
     }
 
@@ -70,7 +68,7 @@ public class DestroyableCollab : MonoBehaviour
                 }
                 if(curHits == hitsToDestroy)
                 {
-                    playerScript.changeHeldObject(collectedMaterialPrefab, false);
+                    playerScript.changeHeldObject(collectedMaterialPrefab, false, true);
                     Destroy(gameObject);
                     Debug.Log("Destroyed");
                 }

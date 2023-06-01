@@ -80,23 +80,20 @@ public class SubmissionManager : MonoBehaviour
         // Destroy the current stage materials and show the success message
         Destroy(materials.GetChild(0).gameObject);
 
-        // Destroy the previous submission result
-        Destroy(submissions[curSubmission].transform.GetChild(0).gameObject);
-
         // Update the number of submissions
         curSubmission++;
 
         if (curSubmission < numSubmissions)
         {
             inSuccess = true;
-            successMessageTime = 5.0f;
+            successMessageTime = 10.0f;
             successMessage.SetActive(true);
 
             SuccessMessage messageScript = successMessage.GetComponent<SuccessMessage>();
             messageScript.updateBuildingText(submissions[curSubmission].buildingName);
 
             // Start the delay coroutine
-            StartCoroutine(DelayedExecution(5.0f));
+            StartCoroutine(toSubmission(10.0f));
         }
         else
         {
@@ -118,11 +115,15 @@ public class SubmissionManager : MonoBehaviour
         }
     }
 
-    private IEnumerator DelayedExecution(float delay)
+    private IEnumerator toSubmission(float delay)
     {
         yield return new WaitForSeconds(delay);
 
         // Continue with the execution after the delay
+
+        // Destroy the previous submission result
+        Destroy(submissions[curSubmission].transform.GetChild(0).gameObject);
+
         // Make the success message invisible again
         successMessage.SetActive(false);
 

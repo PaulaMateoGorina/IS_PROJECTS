@@ -34,9 +34,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void changeHeldObject(GameObject prefab, bool is_tool){
-        isHoldingTool = is_tool;
-        isHoldingMaterial = !is_tool;
+    public void changeHeldObject(GameObject prefab, bool isTool, bool isMaterial){
+        isHoldingTool = isTool;
+        isHoldingMaterial = isMaterial;
+
         Destroy(gameObject.transform.GetChild(0).gameObject); 
         Instantiate(prefab, gameObject.transform);
     }
@@ -46,7 +47,7 @@ public class Player : MonoBehaviour
         if (!onCooldown && !isHoldingMaterial)
         {
             onCooldown = true;
-            changeHeldObject(toolPrefab, true);
+            changeHeldObject(toolPrefab, true, false);
         }
     }
 
@@ -57,7 +58,7 @@ public class Player : MonoBehaviour
 
     public void freeHand()
     {
-        changeHeldObject(handPrefab, false);
+        changeHeldObject(handPrefab, false, false);
     }
 
     public bool holdingTool(){

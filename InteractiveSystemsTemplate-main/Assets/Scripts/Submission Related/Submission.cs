@@ -8,7 +8,7 @@ public class Submission: MonoBehaviour
 
     public static Submission Instance;
 
-    public GameObject result;
+    public GameObject res;
 
     public int woodNeeded;
     public int stoneNeeded;
@@ -83,8 +83,11 @@ public class Submission: MonoBehaviour
         if(materialsNeeded == 0)
         {
             Debug.Log("finished!");
-            Instantiate(result, transform);
+            Instantiate(res, transform);
             SubmissionManager.Instance.submissionOver(false);
+        }else
+        {
+            SoundManager.Instance.PlayCorrect();
         }
     }
 
@@ -95,17 +98,13 @@ public class Submission: MonoBehaviour
         {
             case "Wood":
                 return woodNeeded > 0;
-                break;
             case "Stone":
                 return stoneNeeded > 0;
-                break;
 
             case "Clay":
                 return clayNeeded > 0;
-                break;
             case "Water":
                 return waterNeeded > 0;
-                break;
         }
         return false;   
     }
