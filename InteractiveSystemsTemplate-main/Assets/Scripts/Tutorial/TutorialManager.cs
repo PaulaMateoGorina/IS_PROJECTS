@@ -34,7 +34,12 @@ public class TutorialManager : MonoBehaviour
                 slides1Script.showSlides();
                 break;
             case 1:
-                
+                slides1.SetActive(false);
+                stages.SetActive(true);
+                TutorialStages.Instance.startStage1();
+                break;
+            case 2:
+                SceneManager.LoadScene("Scene");
                 break;
         }
         curStep++;

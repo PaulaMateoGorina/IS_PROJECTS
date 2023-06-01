@@ -50,7 +50,6 @@ public class Slides : MonoBehaviour
 
     private void nextSlide()
     {
-        Debug.Log(curSlide);
         // Make curSlide active and sum one to curSlide
         if (curSlide < numSlides - 1)
         {

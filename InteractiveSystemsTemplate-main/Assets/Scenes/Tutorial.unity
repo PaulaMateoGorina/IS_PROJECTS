@@ -2652,6 +2652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Material_gather_collab
       objectReference: {fileID: 0}
+    - target: {fileID: 412433970581518679, guid: f697f8b2da6302345aedf80cd0ca1b21, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f697f8b2da6302345aedf80cd0ca1b21, type: 3}
 --- !u!4 &395124031 stripped
@@ -2669,13 +2673,14 @@ GameObject:
   m_Component:
   - component: {fileID: 455891442}
   - component: {fileID: 455891443}
+  - component: {fileID: 455891444}
   m_Layer: 0
   m_Name: Tutorial Stages
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &455891442
 Transform:
   m_ObjectHideFlags: 0
@@ -2683,8 +2688,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455891441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.37, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.000015258789, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1986579790}
@@ -2696,8 +2701,8 @@ Transform:
   - {fileID: 686811521}
   - {fileID: 2015940043}
   - {fileID: 1243427373}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 1373191923}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &455891443
 MonoBehaviour:
@@ -2711,6 +2716,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8055c473e85aa41b177349090cb923, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stage1: {fileID: 610891812}
+  stage2: {fileID: 572651890}
+--- !u!114 &455891444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 455891441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a030e26681bf01248b409dbce5da666b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage1: {fileID: 610891812}
+  stage2: {fileID: 572651890}
 --- !u!4 &471217045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4966713257337709227, guid: 51c77826d8e19134492bf92ce9df1295, type: 3}
@@ -2732,7 +2753,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &486753430
 Transform:
   m_ObjectHideFlags: 0
@@ -3073,7 +3094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &572651891
 Transform:
   m_ObjectHideFlags: 0
@@ -3337,7 +3358,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &610891813
 Transform:
   m_ObjectHideFlags: 0
@@ -3682,7 +3703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &686811521
 Transform:
   m_ObjectHideFlags: 0
@@ -5147,7 +5168,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1200572095
 PrefabInstance:
@@ -5459,6 +5480,10 @@ PrefabInstance:
     - target: {fileID: 6946573168077171049, guid: 291de8680f1f0bb41a529245d9b22e73, type: 3}
       propertyPath: m_Name
       value: Order
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946573168077171049, guid: 291de8680f1f0bb41a529245d9b22e73, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 291de8680f1f0bb41a529245d9b22e73, type: 3}
@@ -5964,6 +5989,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2065147727}
+  - {fileID: 455891442}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5979,7 +6005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086e38b18a01fe248882283ee573214a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stages: {fileID: 0}
+  stages: {fileID: 455891441}
   slides1: {fileID: 2065147726}
 --- !u!1 &1400674262
 GameObject:
@@ -9597,7 +9623,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1986579789
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10452,7 +10478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f616aa31d406fa045a60596cfda35333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeBetweenSlides: 5
+  timeBetweenSlides: 1
 --- !u!1001 &2077403648
 PrefabInstance:
   m_ObjectHideFlags: 0

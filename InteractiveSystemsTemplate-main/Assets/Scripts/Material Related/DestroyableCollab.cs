@@ -6,7 +6,6 @@ public class DestroyableCollab : MonoBehaviour
 {
     public int hitsToDestroy;
     public string toolTag;
-    public GameObject collectedMaterialPrefab;
     public float timeBetweenTurns;
     public int curHits;
 
@@ -68,9 +67,9 @@ public class DestroyableCollab : MonoBehaviour
                 }
                 if(curHits == hitsToDestroy)
                 {
-                    playerScript.changeHeldObject(collectedMaterialPrefab, false, true);
                     Destroy(gameObject);
                     Debug.Log("Destroyed");
+                    TutorialManager.Instance.next();
                 }
                 nextPlayer = !nextPlayer;
         
