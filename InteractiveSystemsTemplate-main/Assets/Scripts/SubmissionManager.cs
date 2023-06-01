@@ -108,10 +108,12 @@ public class SubmissionManager : MonoBehaviour
     {
         if (expired)
         {
+            SoundManager.Instance.PlayIncorrect();
             SceneManager.LoadScene("GameOver");
         }
         else
-        {
+        {   
+            SoundManager.Instance.PlayFinishedBuilding();
             newSubmission();
         }
     }

@@ -1496,6 +1496,59 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &240583330
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240583332}
+  - component: {fileID: 240583331}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &240583331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240583330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1b0da150d49e05468f2009ba437d98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  correct: {fileID: 8300000, guid: a2389a31086c31d45bee98cba5f8d35a, type: 3}
+  dig_clay: {fileID: 8300000, guid: 3e722285d65cc584ba297d32b7bd8f1f, type: 3}
+  finished_building: {fileID: 8300000, guid: 28ccad22124692845bbf5477a965a3fb, type: 3}
+  gameplay_bg: {fileID: 8300000, guid: d9127d823083fc14086cf10780d8b3f6, type: 3}
+  get_material: {fileID: 8300000, guid: d01f50c5936b3fc4d8e395452be6a516, type: 3}
+  incorrect: {fileID: 8300000, guid: 2d39caad938d00c4b99395d2e7c22d94, type: 3}
+  intro_music: {fileID: 8300000, guid: 8618309827ecd8d438ae031e1217e84d, type: 3}
+  stone_mining: {fileID: 8300000, guid: 1888d0b857bc0e74a8da697114474e7a, type: 3}
+  water_in_bucket: {fileID: 8300000, guid: 211e58709c311b0408359f02458c6a1b, type: 3}
+  wood_choping: {fileID: 8300000, guid: 7c45b857239b2b845bc87d053ffc32ae, type: 3}
+--- !u!4 &240583332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240583330}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.84395, y: -15.223238, z: 59.438316}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &246456112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,9 +2569,9 @@ Transform:
   m_LocalPosition: {x: 9, y: 1.17, z: 40.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 903178522}
-  - {fileID: 1173374671}
   - {fileID: 1647564932}
+  - {fileID: 1173374671}
+  - {fileID: 903178522}
   m_Father: {fileID: 455891442}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3991,7 +4044,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &903178523
 MonoBehaviour:
@@ -7653,7 +7706,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1647564933
 MonoBehaviour:

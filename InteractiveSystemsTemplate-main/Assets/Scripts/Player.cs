@@ -8,14 +8,18 @@ public class Player : MonoBehaviour
     public int num_player;
     
     public float cooldown;
+    private bool isHoldingMaterial;
+    private bool isHoldingTool;
     private bool onCooldown;
-    private bool hand_free;
+ 
+
 
     // Start is called before the first frame update
     void Start()
     {
         onCooldown = false;
-        hand_free = true;
+        isHoldingMaterial = false;
+        isHoldingTool = false;
     }
 
     // Update is called once per frame
@@ -31,14 +35,15 @@ public class Player : MonoBehaviour
     }
 
     public void changeHeldObject(GameObject prefab, bool is_tool){
-        hand_free = is_tool;
+        isHoldingTool = is_tool;
+        isHoldingMaterial = !is_tool;
         Destroy(gameObject.transform.GetChild(0).gameObject); 
         Instantiate(prefab, gameObject.transform);
     }
 
     public void changeTool(GameObject toolPrefab)
     {
-        if (!onCooldown && hand_free)
+        if (!onCooldown && !isHoldingMaterial)
         {
             onCooldown = true;
             changeHeldObject(toolPrefab, true);
@@ -47,12 +52,18 @@ public class Player : MonoBehaviour
 
     public bool holdingMaterial()
     {
-        return !hand_free;
+        return isHoldingMaterial;
     }
 
     public void freeHand()
     {
-        changeHeldObject(handPrefab, true);
+        changeHeldObject(handPrefab, false);
     }
+
+    public bool holdingTool(){
+
+        return isHoldingTool;
+    }
+   
 }
 

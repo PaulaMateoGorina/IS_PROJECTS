@@ -11,6 +11,7 @@ public class Destroyable : MonoBehaviour
     private float cooldown;
     private bool onCooldown;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,27 +34,57 @@ public class Destroyable : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision");
-        if (SubmissionManager.Instance.isMaterialNeeded(gameObject.tag))
+        if(collision.gameObject.CompareTag("Player"))
         {
-            if (!onCooldown && collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
+            Player playerScript = collision.gameObject.GetComponent<Player>();
+            if (SubmissionManager.Instance.isMaterialNeeded(gameObject.tag))
             {
-                hitsToDestroy--;
-                Debug.Log("Hit");
-                onCooldown = true;
-                if (hitsToDestroy <= 0)
+                if (!onCooldown && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
                 {
-                    Player playerScript = collision.gameObject.GetComponent<Player>();
-                    if (playerScript != null)
-                        playerScript.changeHeldObject(collectedMaterialPrefab, false);
-                    Destroy(gameObject);
-                    Debug.Log("Destroyed");
+                    hitsToDestroy--;
+                    Debug.Log("Hit");
+                    onCooldown = true;
+                
+                    if (hitsToDestroy <= 0)
+                    {
+        
+                        if (playerScript != null)
+                            playerScript.changeHeldObject(collectedMaterialPrefab, false);
+                        Destroy(gameObject);
+                        Debug.Log("Destroyed");
+                        SoundManager.Instance.PlayGetMaterial();
+                    }
+                    else
+                    {
+                        PlayHitSound();
+                    }
                 }
             }
+            else if(playerScript.holdingTool())
+            {   
+                Debug.Log("Incorrect Material!!");
+                SoundManager.Instance.PlayIncorrect();
+            }
+
         }
-        else
-        {
-            //TODO: display
-        }
+       
     }
     
+    private void PlayHitSound()
+    {
+        switch (gameObject.tag)
+        {
+            case "Stone":
+                SoundManager.Instance.PlayStoneMining();
+            break;
+        
+            case "Wood":
+                SoundManager.Instance.PlayWoodChopping();
+            break;
+
+            case "Clay":
+                SoundManager.Instance.PlayDigClay();
+            break;
+        }
+    }
 }
