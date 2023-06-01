@@ -6,6 +6,8 @@ using TMPro;
 public class SuccessMessage : MonoBehaviour
 {
     public TMP_Text timeText;
+    public TMP_Text  buildingText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,4 +24,10 @@ public class SuccessMessage : MonoBehaviour
     {
         timeText.text = ( "Te daremos otro pedido en: " + time + "s");
     }
+    public void updateBuildingText(string building)
+    {
+        buildingText.text = building;
+    }
+
+    
 }

@@ -17,6 +17,7 @@ public class Submission: MonoBehaviour
     public float remainingTime;
     public GameObject materialStage;
 
+    public string buildingName;
 
     private int materialsNeeded;
 

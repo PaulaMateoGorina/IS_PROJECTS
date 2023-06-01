@@ -7,38 +7,90 @@ public class DestroyableCollab : MonoBehaviour
     public int hitsToDestroy;
     public string toolTag;
     public GameObject collectedMaterialPrefab;
+    public float timeBetweenTurns;
+    public int curHits;
 
-
-    private int player1HitsRemaining;
-    private int player2HitsRemaining;
     private float turnCoolDown;
     private float lastTurnTime;
-
     private bool arePlayersHitting;
     private bool firstPlayer;
     private bool nextPlayer;
-    private int curHits;
+    private float cooldown;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-
-
-        player1HitsRemaining = 3;
-        player2HitsRemaining = 3; 
-
-        //isplayerTurn1 =  true;
-        //isplayerTurn1 =  true;
         arePlayersHitting = false;
         curHits = 0;
         turnCoolDown = 0.5f;
+        lastTurnTime = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-     
+        timeBetweenTurns -= Time.deltaTime;
+        if( timeBetweenTurns <=0 )
+        {
+            timeBetweenTurns = 20;
+            curHits = 0;
+            arePlayersHitting = false;
+            lastTurnTime = Time.time;
+        }
+        if(cooldown > 0 )
+        {
+            cooldown -= Time.deltaTime;
+        }
     }
+
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("hit1");
+        if(collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
+        {   
+            Debug.Log("hit2");
+            Player playerScript = collision.gameObject.GetComponent<Player>();
+            int num_player = playerScript.num_player;
+
+            if(!arePlayersHitting)
+            {
+                arePlayersHitting = true;
+                firstPlayer = (num_player % 2) == 0;
+                nextPlayer = !firstPlayer;
+                timeBetweenTurns = 20;
+                cooldown = 1.0f;
+            }
+            else if ( (num_player % 2 == 0) == nextPlayer && cooldown <= 0)
+            {
+                if(firstPlayer != nextPlayer)
+                {
+                    curHits ++;
+                }
+                if(curHits == hitsToDestroy)
+                {
+                    playerScript.changeHeldObject(collectedMaterialPrefab, false);
+                    Destroy(gameObject);
+                    Debug.Log("Destroyed");
+                }
+                nextPlayer = !nextPlayer;
+        
+                timeBetweenTurns = 20;
+                cooldown = 1.0f;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
 
     // private void OnCollisionEnter(Collision collision)
     // {
@@ -112,43 +164,6 @@ public class DestroyableCollab : MonoBehaviour
     //         }
     //     }
     // }
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.CompareTag("Player") && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
-        {   
-            Player playerScript = collision.gameObject.GetComponent<Player>();
-            int num_player = playerScript.num_player;
-
-            if(!arePlayersHitting && Time.time - lastTurnTime > turnCoolDown)
-            {
-                arePlayersHitting = true;
-                firstPlayer = (num_player % 2) == 1;
-                nextPlayer = !firstPlayer;
-                lastTurnTime = Time.time;
-            }
-            else if ( (num_player % 2 == 0) == nextPlayer && Time.time - lastTurnTime > turnCoolDown){
-                if(firstPlayer != nextPlayer)
-                {
-                    curHits ++;
-                    arePlayersHitting = false;
-                }
-                if(curHits == hitsToDestroy)
-                {
-                    playerScript.changeHeldObject(collectedMaterialPrefab, false);
-                    Destroy(gameObject);
-                    Debug.Log("Destroyed");
-                }
-
-            }
-            else{
-                curHits = 0;
-                arePlayersHitting = false;
-            }
-        }
-    }
-    
-}
 
 
 
