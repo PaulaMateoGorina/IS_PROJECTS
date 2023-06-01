@@ -5,6 +5,7 @@ using UnityEngine;
 public class Slides : MonoBehaviour
 {
     public float timeBetweenSlides;
+    public bool firstSlides;
 
     private int numSlides;
     private GameObject[] slides;
@@ -25,8 +26,9 @@ public class Slides : MonoBehaviour
 
         curSlide = 0;
         showingSlides = false;
-
-        TutorialManager.Instance.next();
+        
+        if(firstSlides)
+            TutorialManager.Instance.next();
     }
 
     void Update()
