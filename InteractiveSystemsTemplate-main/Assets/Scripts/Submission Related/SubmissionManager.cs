@@ -8,10 +8,10 @@ public class SubmissionManager : MonoBehaviour
 
     public static SubmissionManager Instance;
 
-    public Submission[] submissions;
     public Transform materials;
     public GameObject successMessage;
     
+    private Submission[] submissions;
     private int curSubmission;
     private int numSubmissions;
     private bool inSuccess;
