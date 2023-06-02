@@ -16,6 +16,8 @@ public class SoundManager : MonoBehaviour
     public AudioClip water_in_bucket;
     public AudioClip wood_choping;
 
+    public GameObject camera;
+
     private Vector3 cameraPosition;
 
     // Start is called before the first frame update
@@ -25,7 +27,7 @@ public class SoundManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-        cameraPosition = new Vector3(0,0,0);
+        cameraPosition = camera.transform.position;
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class SoundManager : MonoBehaviour
     }
     
     private void PlaySound(AudioClip clip){
-        AudioSource.PlayClipAtPoint(clip, cameraPosition);
+        AudioSource.PlayClipAtPoint(clip, cameraPosition, 10.0f);
     }
 
     public void PlayCorrect()

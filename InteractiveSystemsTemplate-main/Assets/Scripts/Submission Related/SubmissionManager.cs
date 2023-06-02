@@ -122,7 +122,7 @@ public class SubmissionManager : MonoBehaviour
         // Continue with the execution after the delay
 
         // Destroy the previous submission result
-        Destroy(submissions[curSubmission].transform.GetChild(0).gameObject);
+        Destroy(submissions[curSubmission - 1].transform.GetChild(0).gameObject);
 
         // Make the success message invisible again
         successMessage.SetActive(false);

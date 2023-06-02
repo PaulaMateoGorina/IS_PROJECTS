@@ -1535,6 +1535,7 @@ MonoBehaviour:
   stone_mining: {fileID: 8300000, guid: 1888d0b857bc0e74a8da697114474e7a, type: 3}
   water_in_bucket: {fileID: 8300000, guid: 211e58709c311b0408359f02458c6a1b, type: 3}
   wood_choping: {fileID: 8300000, guid: 7c45b857239b2b845bc87d053ffc32ae, type: 3}
+  camera: {fileID: 342261390}
 --- !u!4 &240583332
 Transform:
   m_ObjectHideFlags: 0
@@ -2588,7 +2589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a35061455e24ec40b1301eac56f9b4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  submissions: []
   materials: {fileID: 686811521}
   successMessage: {fileID: 1986579788}
 --- !u!1 &530153862
@@ -4629,6 +4629,7 @@ MonoBehaviour:
   remainingTime: 60
   materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
   buildingName: Stairs
+  materialsNeeded: 0
 --- !u!1 &1176945744
 GameObject:
   m_ObjectHideFlags: 0
@@ -5184,7 +5185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 0}
-  num_player: 4
+  numPlayer: 0
   cooldown: 5
 --- !u!1 &1266383783
 GameObject:
@@ -5941,7 +5942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 557806dcc4afedd408a2dbbce9154333, type: 3}
-  num_player: 1
+  numPlayer: 0
   cooldown: 5
 --- !u!54 &1440896354
 Rigidbody:
@@ -6505,7 +6506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 5ef19e19e173c7f4598ba79485dae987, type: 3}
-  num_player: 2
+  numPlayer: 0
   cooldown: 5
 --- !u!1001 &1477000762
 PrefabInstance:
@@ -7678,6 +7679,7 @@ MonoBehaviour:
   remainingTime: 1000
   materialStage: {fileID: 412433970581518679, guid: 6379e964959f07d4fb0f545e79e2f6d2, type: 3}
   buildingName: Chair
+  materialsNeeded: 0
 --- !u!1 &1699036598
 GameObject:
   m_ObjectHideFlags: 0
@@ -8357,7 +8359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 0}
-  num_player: 3
+  numPlayer: 0
   cooldown: 5
 --- !u!1 &1866559963
 GameObject:

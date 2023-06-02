@@ -4194,6 +4194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 0}
+  numPlayer: 0
   cooldown: 5
 --- !u!1 &1266383783
 GameObject:
@@ -4932,6 +4933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 557806dcc4afedd408a2dbbce9154333, type: 3}
+  numPlayer: 0
   cooldown: 5
 --- !u!54 &1440896354
 Rigidbody:
@@ -5495,6 +5497,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 5ef19e19e173c7f4598ba79485dae987, type: 3}
+  numPlayer: 0
   cooldown: 5
 --- !u!1 &1483708435
 GameObject:
@@ -7328,6 +7331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 0}
+  numPlayer: 0
   cooldown: 5
 --- !u!1 &1866559963
 GameObject:

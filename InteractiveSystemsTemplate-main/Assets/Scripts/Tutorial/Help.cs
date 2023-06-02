@@ -16,7 +16,7 @@ public class Help : MonoBehaviour
 
     void Update()
     {
-        if(player1WantsHelp || player1WantsHelp)
+        if(player1WantsHelp || player2WantsHelp)
             helpSign.SetActive(true);
         else
             helpSign.SetActive(false); 

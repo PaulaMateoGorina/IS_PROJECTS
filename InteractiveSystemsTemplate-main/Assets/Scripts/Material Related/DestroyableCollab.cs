@@ -55,7 +55,7 @@ public class DestroyableCollab : MonoBehaviour
             if(!arePlayersHitting)
             {
                 arePlayersHitting = true;
-
+                SoundManager.Instance.PlayStoneMining();
                 // Take the first player -> bools are easy to switch from one value to another
                 firstPlayer = (numPlayer % 2) == 0;
                 nextPlayer = !firstPlayer;
@@ -72,6 +72,7 @@ public class DestroyableCollab : MonoBehaviour
                 // If the player other than the one who started hit it, it means both players have already hit the rock, so we add one hit
                 if(firstPlayer != nextPlayer)
                 {
+                    SoundManager.Instance.PlayStoneMining();
                     curHits ++;
                 }
                 // If the hits are the needed ones to destroy it
