@@ -12,11 +12,17 @@ public class Slides : MonoBehaviour
     private int curSlide;
     private bool showingSlides;
     private float curTime;
+    private bool player1clicked;
+    private bool player2clicked;
+    private float cooldown;
 
     void Start()
     {
         numSlides = transform.childCount;
         slides = new GameObject[numSlides];
+        cooldown = -1;
+        player1clicked = false;
+        player2clicked = false;
 
         for (int i = 0; i < numSlides; i++)
         {
@@ -33,15 +39,16 @@ public class Slides : MonoBehaviour
 
     void Update()
     {
-        if (showingSlides)
-        {
-            curTime += Time.deltaTime;
-            if (curTime > timeBetweenSlides)
-            {
-                curTime = 0;
-                nextSlide();
-            }
-        }
+        // if (showingSlides)
+        // {
+        //     curTime += Time.deltaTime;
+        //     if (curTime > timeBetweenSlides)
+        //     {
+        //         curTime = 0;
+        //         nextSlide();
+        //     }
+        // }
+        cooldown -= Time.deltaTime;
     }
 
     public void showSlides()
@@ -65,4 +72,40 @@ public class Slides : MonoBehaviour
             TutorialManager.Instance.next();
        
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(!showingSlides)
+        {
+            return ;
+        }
+
+        if(other.gameObject.CompareTag("Player"))
+        {   
+           
+            Player playerScript = other.gameObject.GetComponent<Player>();
+            int numPlayer = playerScript.numPlayer;
+
+            if(numPlayer == 1 )
+            {
+                player1clicked  = true;
+            }
+            else
+            {
+                player2clicked = true;
+            }
+            if (player1clicked && player2clicked && cooldown <= 0)
+            {
+                cooldown = 1.0f;
+                player1clicked = false;
+                player2clicked = false;
+                nextSlide();
+            }
+        }
+        
+    }
+    
+   
+    
 }
+
