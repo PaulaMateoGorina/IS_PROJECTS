@@ -22,7 +22,7 @@ public class SuccessMessage : MonoBehaviour
 
     public void UpdateTimeText(int time)
     {
-        timeText.text = ( "Te daremos otro pedido en: " + time + "s");
+        timeText.text = (time + "s");
     }
     public void updateBuildingText(string building)
     {
