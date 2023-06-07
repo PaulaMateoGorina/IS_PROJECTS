@@ -26,6 +26,7 @@ public class Submission: MonoBehaviour
 
     public void updateAll()
     {
+        OrderManager.Instance.UpdateTitleText(buildingName);
         OrderManager.Instance.UpdateWoodText(woodNeeded);
         OrderManager.Instance.UpdateStoneText(stoneNeeded);
         OrderManager.Instance.UpdateClayText(clayNeeded);

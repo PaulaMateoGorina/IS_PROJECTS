@@ -726,6 +726,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57471757}
   m_CullTransparentMesh: 1
+--- !u!114 &71676367 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7329350947754411370, guid: 291de8680f1f0bb41a529245d9b22e73, type: 3}
+  m_PrefabInstance: {fileID: 1243427372}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &88327876
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1561,58 @@ Transform:
   m_Father: {fileID: 455891442}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &246209891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246209892}
+  - component: {fileID: 246209893}
+  m_Layer: 0
+  m_Name: Well
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246209892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246209891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486753430}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &246209893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246209891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e57c4d1a3c40f488bbdc27e0033276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  res: {fileID: 1194426129884200, guid: 6f36196fa45b4bf458acb1e445499ce1, type: 3}
+  woodNeeded: 2
+  stoneNeeded: 3
+  clayNeeded: 1
+  waterNeeded: 3
+  remainingTime: 1000
+  materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
+  buildingName: WELL
+  materialsNeeded: 0
 --- !u!1 &246456112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2183,6 +2246,7 @@ GameObject:
   - component: {fileID: 342261394}
   - component: {fileID: 342261393}
   - component: {fileID: 342261392}
+  - component: {fileID: 342261395}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -2369,6 +2433,102 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!82 &342261395
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 342261390}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: d9127d823083fc14086cf10780d8b3f6, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &392176227
 GameObject:
   m_ObjectHideFlags: 0
@@ -2525,8 +2685,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 455891441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -17.37, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -17.37, z: 100.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 486753430}
@@ -2538,7 +2698,7 @@ Transform:
   - {fileID: 1243427373}
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &471217045 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4966713257337709227, guid: 51c77826d8e19134492bf92ce9df1295, type: 3}
@@ -2572,8 +2732,12 @@ Transform:
   m_LocalPosition: {x: 9, y: 1.17, z: 40.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 246209892}
+  - {fileID: 2142729263}
   - {fileID: 1647564932}
+  - {fileID: 1743073095}
   - {fileID: 1173374671}
+  - {fileID: 1537501829}
   m_Father: {fileID: 455891442}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4589,7 +4753,7 @@ GameObject:
   - component: {fileID: 1173374671}
   - component: {fileID: 1173374672}
   m_Layer: 0
-  m_Name: Stairs
+  m_Name: Stone Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4607,7 +4771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173374672
 MonoBehaviour:
@@ -4623,12 +4787,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   res: {fileID: 2006959220475323954, guid: f2799c2d549259841b9b95372363edc2, type: 3}
   woodNeeded: 0
-  stoneNeeded: 1
+  stoneNeeded: 4
   clayNeeded: 0
   waterNeeded: 0
-  remainingTime: 60
+  remainingTime: 1000
   materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
-  buildingName: STAIRS
+  buildingName: STONE STAIRS
   materialsNeeded: 0
 --- !u!1 &1176945744
 GameObject:
@@ -5029,6 +5193,10 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5559931327814755544, guid: 291de8680f1f0bb41a529245d9b22e73, type: 3}
+      propertyPath: title
+      value: 
+      objectReference: {fileID: 71676367}
     - target: {fileID: 6004135021258547959, guid: 291de8680f1f0bb41a529245d9b22e73, type: 3}
       propertyPath: m_HorizontalAlignment
       value: 2
@@ -6787,6 +6955,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1497522838}
   m_CullTransparentMesh: 1
+--- !u!1 &1537501828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1537501829}
+  - component: {fileID: 1537501830}
+  m_Layer: 0
+  m_Name: House
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1537501829
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537501828}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486753430}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1537501830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537501828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e57c4d1a3c40f488bbdc27e0033276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  res: {fileID: 1640908652775104, guid: cd87e5026d1695148aabe96121c526ef, type: 3}
+  woodNeeded: 3
+  stoneNeeded: 2
+  clayNeeded: 1
+  waterNeeded: 0
+  remainingTime: 1000
+  materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
+  buildingName: HOUSE
+  materialsNeeded: 0
 --- !u!1 &1563017566
 GameObject:
   m_ObjectHideFlags: 0
@@ -7610,7 +7830,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1647564933
 MonoBehaviour:
@@ -7625,7 +7845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   res: {fileID: 1944616840669060, guid: 7a77ea810bbc0db4992e500affe32dbf, type: 3}
-  woodNeeded: 1
+  woodNeeded: 3
   stoneNeeded: 0
   clayNeeded: 0
   waterNeeded: 0
@@ -7867,6 +8087,58 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1743073094
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1743073095}
+  - component: {fileID: 1743073096}
+  m_Layer: 0
+  m_Name: Furnance
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1743073095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743073094}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486753430}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1743073096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743073094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e57c4d1a3c40f488bbdc27e0033276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  res: {fileID: 6591814435315512985, guid: 375aacc276d724f41b0baa76221478d3, type: 3}
+  woodNeeded: 0
+  stoneNeeded: 0
+  clayNeeded: 2
+  waterNeeded: 2
+  remainingTime: 1000
+  materialStage: {fileID: 412433970581518679, guid: a778748546c6aae4cb071fc76854357f, type: 3}
+  buildingName: FURNANCE
+  materialsNeeded: 0
 --- !u!1 &1797515176
 GameObject:
   m_ObjectHideFlags: 0
@@ -9906,6 +10178,58 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3781274957288479181, guid: 7dfde7e21eef7db4bace3a599ae2f907, type: 3}
   m_PrefabInstance: {fileID: 2077403648}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2142729262
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142729263}
+  - component: {fileID: 2142729264}
+  m_Layer: 0
+  m_Name: Table
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2142729263
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142729262}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 486753430}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2142729264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142729262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6e57c4d1a3c40f488bbdc27e0033276, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  res: {fileID: 1315125114229348, guid: 4c1686a5131ac8b45bfe913f509289c0, type: 3}
+  woodNeeded: 4
+  stoneNeeded: 0
+  clayNeeded: 0
+  waterNeeded: 0
+  remainingTime: 1000
+  materialStage: {fileID: 412433970581518679, guid: 6379e964959f07d4fb0f545e79e2f6d2, type: 3}
+  buildingName: TABLE
+  materialsNeeded: 0
 --- !u!1001 &221808885112988128
 PrefabInstance:
   m_ObjectHideFlags: 0

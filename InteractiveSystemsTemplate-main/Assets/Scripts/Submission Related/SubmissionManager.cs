@@ -97,7 +97,7 @@ public class SubmissionManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("SuccessScene");
+            SceneManager.LoadScene("Success");
         }
     }
 
@@ -105,7 +105,6 @@ public class SubmissionManager : MonoBehaviour
     {
         if (expired)
         {
-            SoundManager.Instance.PlayIncorrect();
             SceneManager.LoadScene("GameOver");
         }
         else

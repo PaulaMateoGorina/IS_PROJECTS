@@ -13,6 +13,7 @@ public class OrderManager : MonoBehaviour
     public TMP_Text clayText;
     public TMP_Text waterText;
     public TMP_Text timeText;
+    public TMP_Text title;
 
     void Awake()
     {
@@ -24,6 +25,12 @@ public class OrderManager : MonoBehaviour
     {
         woodText.text = "Wood x" + wood;
     }
+
+    public void UpdateTitleText(string text )
+    {
+        title.text = text;
+    }
+
 
     // Update is called once per frame
     public void UpdateStoneText(int stone)

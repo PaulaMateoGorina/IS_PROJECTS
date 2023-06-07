@@ -32,6 +32,7 @@ Transform:
   - {fileID: 6312827793367655654}
   - {fileID: 4535567131959954426}
   - {fileID: 7339986852003209179}
+  - {fileID: 8683410458519206915}
   m_Father: {fileID: 412433970581518672}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -79,7 +80,7 @@ GameObject:
   m_Component:
   - component: {fileID: 412433970581518672}
   m_Layer: 0
-  m_Name: Material_gather2
+  m_Name: Material_gather1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -730,4 +731,78 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7589646274707864732, guid: 902b3d9be385a9f49b4ad1ad542fa30f, type: 3}
   m_PrefabInstance: {fileID: 7980682135696841107}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8719203534962229806
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 412433970293818826}
+    m_Modifications:
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 39.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.1999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 90.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7660445
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6427876
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -80
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108507113624723981, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+      propertyPath: m_Name
+      value: Stone (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+--- !u!4 &8683410458519206915 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 108507113624698413, guid: e0f275107ce0db64c85aaf296a81b113, type: 3}
+  m_PrefabInstance: {fileID: 8719203534962229806}
   m_PrefabAsset: {fileID: 0}
