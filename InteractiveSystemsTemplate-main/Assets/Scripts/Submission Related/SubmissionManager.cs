@@ -90,7 +90,7 @@ public class SubmissionManager : MonoBehaviour
             successMessage.SetActive(true);
 
             SuccessMessage messageScript = successMessage.GetComponent<SuccessMessage>();
-            messageScript.updateBuildingText(submissions[curSubmission].buildingName);
+            messageScript.updateBuildingText(submissions[curSubmission -1].buildingName);
 
             // Start the delay coroutine
             StartCoroutine(toSubmission(10.0f));

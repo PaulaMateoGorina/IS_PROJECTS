@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
             cooldown -= Time.deltaTime;
             if(cooldown<=0){
                 onCooldown = false;
-                cooldown = 5;
+                cooldown = 3;
             }
         }
     }

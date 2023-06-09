@@ -1590,7 +1590,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &246209893
 MonoBehaviour:
@@ -1609,7 +1609,7 @@ MonoBehaviour:
   stoneNeeded: 3
   clayNeeded: 1
   waterNeeded: 3
-  remainingTime: 1000
+  remainingTime: 135
   materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
   buildingName: WELL
   materialsNeeded: 0
@@ -2732,12 +2732,12 @@ Transform:
   m_LocalPosition: {x: 9, y: 1.17, z: 40.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 246209892}
-  - {fileID: 2142729263}
   - {fileID: 1647564932}
-  - {fileID: 1743073095}
   - {fileID: 1173374671}
+  - {fileID: 1743073095}
+  - {fileID: 2142729263}
   - {fileID: 1537501829}
+  - {fileID: 246209892}
   m_Father: {fileID: 455891442}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 0
+  enableTracking: 1
   numberOfPlayers: 2
   enableYAxis: 1
   players:
@@ -4771,7 +4771,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1173374672
 MonoBehaviour:
@@ -4790,7 +4790,7 @@ MonoBehaviour:
   stoneNeeded: 4
   clayNeeded: 0
   waterNeeded: 0
-  remainingTime: 1000
+  remainingTime: 60
   materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
   buildingName: STONE STAIRS
   materialsNeeded: 0
@@ -6064,7 +6064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 557806dcc4afedd408a2dbbce9154333, type: 3}
   numPlayer: 0
-  cooldown: 5
+  cooldown: 3
 --- !u!54 &1440896354
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6628,7 +6628,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handPrefab: {fileID: 1265887694409429368, guid: 5ef19e19e173c7f4598ba79485dae987, type: 3}
   numPlayer: 0
-  cooldown: 5
+  cooldown: 3
 --- !u!1001 &1477000762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6984,7 +6984,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1537501830
 MonoBehaviour:
@@ -7003,7 +7003,7 @@ MonoBehaviour:
   stoneNeeded: 2
   clayNeeded: 1
   waterNeeded: 0
-  remainingTime: 1000
+  remainingTime: 90
   materialStage: {fileID: 412433970581518679, guid: 9431bf7706caea1498c4c32396a8b642, type: 3}
   buildingName: HOUSE
   materialsNeeded: 0
@@ -7830,7 +7830,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1647564933
 MonoBehaviour:
@@ -7849,7 +7849,7 @@ MonoBehaviour:
   stoneNeeded: 0
   clayNeeded: 0
   waterNeeded: 0
-  remainingTime: 1000
+  remainingTime: 45
   materialStage: {fileID: 412433970581518679, guid: 6379e964959f07d4fb0f545e79e2f6d2, type: 3}
   buildingName: CHAIR
   materialsNeeded: 0
@@ -8116,7 +8116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1743073096
 MonoBehaviour:
@@ -8135,7 +8135,7 @@ MonoBehaviour:
   stoneNeeded: 0
   clayNeeded: 2
   waterNeeded: 2
-  remainingTime: 1000
+  remainingTime: 60
   materialStage: {fileID: 412433970581518679, guid: a778748546c6aae4cb071fc76854357f, type: 3}
   buildingName: FURNANCE
   materialsNeeded: 0
@@ -10207,7 +10207,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 486753430}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2142729264
 MonoBehaviour:
@@ -10226,7 +10226,7 @@ MonoBehaviour:
   stoneNeeded: 0
   clayNeeded: 0
   waterNeeded: 0
-  remainingTime: 1000
+  remainingTime: 60
   materialStage: {fileID: 412433970581518679, guid: 6379e964959f07d4fb0f545e79e2f6d2, type: 3}
   buildingName: TABLE
   materialsNeeded: 0

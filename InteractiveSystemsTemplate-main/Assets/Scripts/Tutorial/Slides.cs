@@ -89,10 +89,13 @@ public class Slides : MonoBehaviour
             if(numPlayer == 1 )
             {
                 player1clicked  = true;
+                SoundManager.Instance.PlayGetMaterial();
             }
             else
             {
                 player2clicked = true;
+                SoundManager.Instance.PlayGetMaterial();
+
             }
             if (player1clicked && player2clicked && cooldown <= 0)
             {

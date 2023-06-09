@@ -61,7 +61,7 @@ public class DestroyableCollab : MonoBehaviour
                 nextPlayer = !firstPlayer;
 
                 // Maximum time a player can take to hit the rock after the other one has done it
-                timeBetweenTurns = 20;
+                timeBetweenTurns = 5.0f;
 
                 // Cooldown so we don't collision forever
                 cooldown = 1.0f;
@@ -69,10 +69,10 @@ public class DestroyableCollab : MonoBehaviour
             // If the player that is hitting it matches the next in line, and there is no cooldown
             else if ( (numPlayer % 2 == 0) == nextPlayer && cooldown <= 0)
             {
+                SoundManager.Instance.PlayStoneMining();
                 // If the player other than the one who started hit it, it means both players have already hit the rock, so we add one hit
                 if(firstPlayer != nextPlayer)
                 {
-                    SoundManager.Instance.PlayStoneMining();
                     curHits ++;
                 }
                 // If the hits are the needed ones to destroy it
@@ -87,7 +87,7 @@ public class DestroyableCollab : MonoBehaviour
                 // Change the next player accordingly
                 nextPlayer = !nextPlayer;
         
-                timeBetweenTurns = 20;
+                timeBetweenTurns = 5.0f;
                 cooldown = 1.0f;
             }
         }
