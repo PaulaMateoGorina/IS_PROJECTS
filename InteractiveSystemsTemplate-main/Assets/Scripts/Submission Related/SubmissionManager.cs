@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+Function responsible for managing the submissions 
+*/
+
+
 public class SubmissionManager : MonoBehaviour
 {
 
@@ -38,7 +43,9 @@ public class SubmissionManager : MonoBehaviour
 
     void Start()
     {
+        //At the beggining we instanciate the corresponding submission
         Instantiate(submissions[curSubmission].materialStage, materials);
+        // And update the text
         submissions[curSubmission].updateAll();
     }
 
@@ -63,18 +70,19 @@ public class SubmissionManager : MonoBehaviour
 
     }
 
+    // Function to update materials needed of the current submission
     public void updateMaterialsNeeded(string materialName)
     {
         submissions[curSubmission].updateMaterialsNeeded(materialName);
     }
 
-
+    // Funcion that cheks if the material is needed in the current submission
     public bool isMaterialNeeded(string materialName)
     {
         return submissions[curSubmission].isMaterialNeeded(materialName);
     }
 
-    
+    // Function that initialises the next submission if necesary. If there are no more submissions, loades success scene. 
     private void newSubmission()
     {
         // Destroy the current stage materials and show the success message
@@ -101,6 +109,7 @@ public class SubmissionManager : MonoBehaviour
         }
     }
 
+    // Function that finalices the submission. If the time is expired, loades the GameOver scene, if not instanciates the next submission. 
     public void submissionOver(bool expired)
     {
         if (expired)
@@ -114,6 +123,7 @@ public class SubmissionManager : MonoBehaviour
         }
     }
 
+    // IEnumerator used to delay the end of submissions while the sucess message appears. 
     private IEnumerator toSubmission(float delay)
     {
         yield return new WaitForSeconds(delay);

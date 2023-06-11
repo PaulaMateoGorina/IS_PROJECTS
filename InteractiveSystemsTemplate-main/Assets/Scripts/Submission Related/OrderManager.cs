@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+/*
+This class controls the behaviour of the texts indicating the orders. 
+*/
+
 public class OrderManager : MonoBehaviour
 {
     public static OrderManager Instance;
@@ -20,7 +24,8 @@ public class OrderManager : MonoBehaviour
         Instance = this;
     }
 
-    // Update is called once per frame
+    // Function to update all the different texts 
+    
     public void UpdateWoodText(int wood)
     {
         woodText.text = "Wood x" + wood;
@@ -32,19 +37,16 @@ public class OrderManager : MonoBehaviour
     }
 
 
-    // Update is called once per frame
     public void UpdateStoneText(int stone)
     {
         stoneText.text = "Stone x" + stone;
     }
 
-    // Update is called once per frame
     public void UpdateClayText(int clay)
     {
         clayText.text = "Clay x" + clay;
     }
 
-    // Update is called once per frame
     public void UpdateWaterText(int water)
     {
         waterText.text = "Water x" + water;

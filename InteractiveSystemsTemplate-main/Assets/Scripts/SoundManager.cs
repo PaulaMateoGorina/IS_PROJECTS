@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+This class is a singleton responsible of controlling the sounds of the game
+*/
+
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
@@ -36,10 +40,13 @@ public class SoundManager : MonoBehaviour
         
     }
     
+    // Function to play a given sound.
     private void PlaySound(AudioClip clip){
         AudioSource.PlayClipAtPoint(clip, cameraPosition, 10.0f);
     }
 
+    //Functions to play all the different sounds of the game.
+    
     public void PlayCorrect()
     {
         PlaySound(correct);

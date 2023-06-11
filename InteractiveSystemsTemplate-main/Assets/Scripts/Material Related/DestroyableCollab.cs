@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+Class responsible for controlling the destruction of the rock in the collaborative stage.
+*/
+
 public class DestroyableCollab : MonoBehaviour
 {
     public int hitsToDestroy;

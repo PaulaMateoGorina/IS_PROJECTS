@@ -1,20 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+This class controls the behaviour of the submission place
+*/
 
 public class SubmissionPlace : MonoBehaviour
 {
 
-    // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
+        //If the one colliding is the player
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player entered");
+           //If it is holding a material, we update the list of materials needed and free the hand. 
             Player playerScript = other.gameObject.GetComponent<Player>();
             if (playerScript != null && playerScript.holdingMaterial())
             {
-                Debug.Log("Submitted");
                 SubmissionManager.Instance.updateMaterialsNeeded(other.transform.GetChild(0).gameObject.tag);
                 playerScript.freeHand();
             }

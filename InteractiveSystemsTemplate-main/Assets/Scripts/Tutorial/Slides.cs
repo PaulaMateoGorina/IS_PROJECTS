@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+This class manages the behaviour of the story slides
+*/
+
+
 public class Slides : MonoBehaviour
 {
     public float timeBetweenSlides;
@@ -24,12 +29,15 @@ public class Slides : MonoBehaviour
         player1clicked = false;
         player2clicked = false;
 
+
+        // Deactivate all the slides
         for (int i = 0; i < numSlides; i++)
         {
             slides[i] = transform.GetChild(i).gameObject;
             slides[i].SetActive(false);
         }
 
+        //Set current slide to the first one
         curSlide = 0;
         showingSlides = false;
         
@@ -51,12 +59,15 @@ public class Slides : MonoBehaviour
         cooldown -= Time.deltaTime;
     }
 
+
+    // Function that shows the current slide. 
     public void showSlides()
     {
         showingSlides = true;
         slides[curSlide].SetActive(true);
     }
 
+    //Function that changes to next slide. 
     private void nextSlide()
     {
         // Make curSlide active and sum one to curSlide
@@ -73,6 +84,7 @@ public class Slides : MonoBehaviour
        
     }
 
+    // Trigger to control the slide change. Both players need to click at least one time on the continue button in order to continue. 
     private void OnTriggerEnter(Collider other)
     {
         if(!showingSlides)
