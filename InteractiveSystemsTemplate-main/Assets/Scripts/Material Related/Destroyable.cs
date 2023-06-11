@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+/*
+This class controls the behabiour of the stage materials that are destroyed when recollected (all except water)
+*/
 
 public class Destroyable : MonoBehaviour
 {
@@ -36,36 +39,42 @@ public class Destroyable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Collision");
+      // If the one colliding is the player
         if(collision.gameObject.CompareTag("Player"))
         {
             Player playerScript = collision.gameObject.GetComponent<Player>();
+
+            // If we need the material that the player is tryin to collect
             if (SubmissionManager.Instance.isMaterialNeeded(gameObject.tag))
             {
+                //We need to check wether we are in cooldown and if the tool is the appropiate one.
                 if (!onCooldown && collision.transform.GetChild(0).gameObject.CompareTag(toolTag))
                 {
+
+                    //If so, we need one hit less to destroy the object and we are in coolDown. This cooldown controls that the user is not constantly colliding. 
                     hitsToDestroy--;
-                    Debug.Log("Hit");
                     onCooldown = true;
-                
+                    
+                    // If the number of hits is sufficient
                     if (hitsToDestroy <= 0)
                     {
-        
+                        //The player obtains the collected material.
                         if (playerScript != null)
                             playerScript.changeHeldObject(collectedMaterialPrefab, false, true);
+                        // The stage material is destroyed and we play the appropiate sound 
                         Destroy(gameObject);
-                        Debug.Log("Destroyed");
                         SoundManager.Instance.PlayGetMaterial();
                     }
                     else
                     {
+                        // Play the appropiate hit sound
                         PlayHitSound();
                     }
                 }
             }
             else if(playerScript.holdingTool())
             {   
-                Debug.Log("Incorrect Material!!");
+               // In case that the player does not need the material, we set the error text to true.
                 errorText.SetActive(true);
                 StartCoroutine(hideError(5.0f));
                 SoundManager.Instance.PlayIncorrect();
@@ -75,6 +84,7 @@ public class Destroyable : MonoBehaviour
        
     }
     
+    // Function responsible for playing the appropiate hit sound.
     private void PlayHitSound()
     {
         switch (gameObject.tag)
@@ -93,6 +103,7 @@ public class Destroyable : MonoBehaviour
         }
     }
 
+    // IEnumerator needed to hide the error message.
     private IEnumerator hideError(float delay)
     {
         yield return new WaitForSeconds(delay);

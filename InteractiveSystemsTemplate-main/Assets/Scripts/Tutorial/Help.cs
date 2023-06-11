@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+This class manages the help sign 
+*/
+
+
 public class Help : MonoBehaviour
 {
     public GameObject helpSign;
@@ -16,6 +21,7 @@ public class Help : MonoBehaviour
 
     void Update()
     {
+        // If any of the players wants help, we activate the sign
         if(player1WantsHelp || player2WantsHelp)
             helpSign.SetActive(true);
         else
@@ -24,7 +30,7 @@ public class Help : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Enter");
+        //Check if the object interacting is a player. If so, we check which one. 
         if (other.gameObject.CompareTag("Player"))
         {
             Player playerScript = other.gameObject.GetComponent<Player>();
@@ -40,6 +46,7 @@ public class Help : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        // We disable the help when the players are no longer touching the sign.
         if (other.gameObject.CompareTag("Player"))
         {
             Player playerScript = other.gameObject.GetComponent<Player>();

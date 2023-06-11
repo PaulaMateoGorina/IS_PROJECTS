@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+Stage that controls the behaviour of the submission are of the tutorial
+*/
+
 public class TutSubmission: Submission
 {
     void Start()
@@ -10,6 +14,7 @@ public class TutSubmission: Submission
         materialsNeeded = woodNeeded + stoneNeeded + clayNeeded + waterNeeded;
     }
 
+    // There is no time in the tutorial
     public override void updateTime(){
         return;
     }

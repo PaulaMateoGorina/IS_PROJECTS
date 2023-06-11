@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+This function contorls the behabiour of the tutorial stage. 
+*/
+
+
 public class TutorialStages : MonoBehaviour
 {
     public static TutorialStages Instance;
@@ -29,17 +34,20 @@ public class TutorialStages : MonoBehaviour
         helpSign.SetActive(false);
     }
 
+    // Set active the first stage.
     public void startStage1()
     {
         stage1.SetActive(true);
         orderPlace.SetActive(false);
     }
 
+    // Finish the first stage
     public void endStage1()
     {
         stage1.SetActive(false);
     }
 
+    // Init the second stage 
     public void startStage2()
     {
         stage2.SetActive(true);
@@ -47,6 +55,7 @@ public class TutorialStages : MonoBehaviour
         helpSign.SetActive(true);
     }
 
+    // Finish the second stage. 
     public void endStage2()
     {
         stage2.SetActive(false);

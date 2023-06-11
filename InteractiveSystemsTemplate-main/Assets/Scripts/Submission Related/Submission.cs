@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/*
+Class defining the behaviour of the submissions.
+*/
+
 public class Submission: MonoBehaviour
 {
 
@@ -21,9 +25,11 @@ public class Submission: MonoBehaviour
 
     void Start()
     {
+        //Set the number of needed materials to the total sum
         materialsNeeded = woodNeeded + stoneNeeded + clayNeeded + waterNeeded;
     }
 
+    // Function that updates all the texts
     public void updateAll()
     {
         OrderManager.Instance.UpdateTitleText(buildingName);
@@ -34,6 +40,7 @@ public class Submission: MonoBehaviour
         OrderManager.Instance.UpdateTimeText((int)Mathf.Ceil(remainingTime));
     }
 
+    // Function that updates the remaining time
     public virtual void updateTime(){
         remainingTime = Mathf.Max(remainingTime - Time.deltaTime, 0.0f ) ;
         if(remainingTime == 0.0f){
@@ -42,6 +49,7 @@ public class Submission: MonoBehaviour
         OrderManager.Instance.UpdateTimeText((int) Mathf.Ceil(remainingTime));
     }
 
+    // Function that updates the needed materials
     public void updateMaterialsNeeded(string materialName)
     {
         switch (materialName)
@@ -71,6 +79,7 @@ public class Submission: MonoBehaviour
         checkFinished();
     }
 
+    // Function that returns whether we have finished or not.
     public virtual void checkFinished()
     {
         if (materialsNeeded == 0)
@@ -85,6 +94,7 @@ public class Submission: MonoBehaviour
         }
     }
 
+    // Function that returns whether a meterial is needed or not. 
     public bool isMaterialNeeded(string materialName)
     {
         switch (materialName)
